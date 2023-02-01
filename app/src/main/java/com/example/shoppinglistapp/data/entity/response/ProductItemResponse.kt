@@ -1,8 +1,8 @@
-package com.example.shoppinglistapp.view.model
+package com.example.shoppinglistapp.data.entity.response
 
 import com.google.gson.annotations.SerializedName
 
-data class ProductItem(
+data class ProductItemResponse(
     @field:SerializedName("product_images")
     val productImages: String? = null,
 
