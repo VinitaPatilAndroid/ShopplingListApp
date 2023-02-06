@@ -1,4 +1,4 @@
-package com.example.shoppinglistapp.view.ui.cartDetails.view
+package com.example.shoppinglistapp.view.ui.cartDetails
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,10 +6,9 @@ import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.shoppinglistapp.data.entity.response.ProductItemResponse
+import com.example.shoppinglistapp.data.model.ProductItemResponse
 import com.example.shoppinglistapp.databinding.ActivityCartBinding
-import com.example.shoppinglistapp.view.ui.cartDetails.cartviewmodel.CartViewModel
-import com.example.shoppinglistapp.view.ui.productlist.adapter.ProductAdapter
+import com.example.shoppinglistapp.view.ui.productlist.ProductAdapter
 
 class CartActivity : AppCompatActivity() {
 

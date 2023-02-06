@@ -1,10 +1,10 @@
-package com.example.shoppinglistapp.view.ui.productdetails.adapter
+package com.example.shoppinglistapp.view.ui.productdetails
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.shoppinglistapp.data.entity.response.ProductImage
+import com.example.shoppinglistapp.data.model.ProductImage
 import com.example.shoppinglistapp.databinding.ListItemBinding
 import com.squareup.picasso.Picasso
 

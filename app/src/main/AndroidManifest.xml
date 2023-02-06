@@ -16,7 +16,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".view.ui.splashscreen.splash.view.SplashActivity"
+            android:name=".view.ui.splash.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,15 +25,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.ui.cartDetails.view.CartActivity"
+            android:name=".view.ui.cartDetails.CartActivity"
             android:exported="false">
         </activity>
         <activity
-            android:name=".view.ui.productdetails.view.ProductDetailsActivity"
+            android:name=".view.ui.productdetails.ProductDetailsActivity"
             android:exported="false">
         </activity>
         <activity
-            android:name=".view.ui.productlist.view.ProductListActivity"
+            android:name=".view.ui.productlist.ProductListActivity"
             android:exported="false">
         </activity>
     </application>

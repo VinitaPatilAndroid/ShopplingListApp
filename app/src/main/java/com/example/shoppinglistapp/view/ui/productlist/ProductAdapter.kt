@@ -1,4 +1,4 @@
-package com.example.shoppinglistapp.view.ui.productlist.adapter
+package com.example.shoppinglistapp.view.ui.productlist
 
 import android.content.Context
 import android.content.Intent
@@ -6,9 +6,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.shoppinglistapp.R
-import com.example.shoppinglistapp.data.entity.response.ProductItemResponse
+import com.example.shoppinglistapp.data.model.ProductItemResponse
 import com.example.shoppinglistapp.databinding.ProductItemListBinding
-import com.example.shoppinglistapp.view.ui.productdetails.view.ProductDetailsActivity
+import com.example.shoppinglistapp.view.ui.productdetails.ProductDetailsActivity
 import com.squareup.picasso.Picasso
 
 class ProductAdapter(

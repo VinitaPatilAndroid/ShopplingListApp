@@ -1,11 +1,11 @@
-package com.example.shoppinglistapp.view.ui.productlist.viewmodel
+package com.example.shoppinglistapp.view.ui.productlist
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.example.shoppinglistapp.data.db.RoomAppDb
-import com.example.shoppinglistapp.data.entity.response.ProductItemResponse
-import com.example.shoppinglistapp.data.entity.response.ProductListResponse
+import com.example.shoppinglistapp.data.model.ProductItemResponse
+import com.example.shoppinglistapp.data.model.ProductListResponse
 import com.example.shoppinglistapp.data.repository.ProductAndCartRepository
 import kotlinx.coroutines.*
 

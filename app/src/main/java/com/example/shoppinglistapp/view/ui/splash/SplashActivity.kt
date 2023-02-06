@@ -1,16 +1,14 @@
-package com.example.shoppinglistapp.view.ui.splashscreen.splash.view
+package com.example.shoppinglistapp.view.ui.splash
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.shoppinglistapp.R
-import com.example.shoppinglistapp.databinding.ActivityCartBinding
 import com.example.shoppinglistapp.databinding.ActivitySplashBinding
-import com.example.shoppinglistapp.view.ui.productlist.view.ProductListActivity
-import com.example.shoppinglistapp.view.ui.splashscreen.splash.viewmodel.SplashState
-import com.example.shoppinglistapp.view.ui.splashscreen.splash.viewmodel.SplashViewModel
+import com.example.shoppinglistapp.view.ui.productlist.ProductListActivity
+import com.example.shoppinglistapp.view.ui.splash.splash.viewmodel.SplashState
+import com.example.shoppinglistapp.view.ui.splash.splash.viewmodel.SplashViewModel
 
 class SplashActivity : AppCompatActivity() {
 
@@ -26,6 +24,7 @@ class SplashActivity : AppCompatActivity() {
                 is SplashState.MainActivity -> {
                     goToMainActivity()
                 }
+                else -> {}
             }
         })
     }

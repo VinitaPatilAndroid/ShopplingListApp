@@ -1,4 +1,4 @@
-package com.example.shoppinglistapp.view.ui.splashscreen.splash.viewmodel
+package com.example.shoppinglistapp.view.ui.splash.splash.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

@@ -1,18 +1,18 @@
 package com.example.shoppinglistapp.data.db
 
 import androidx.room.*
-import com.example.shoppinglistapp.data.entity.response.ProductItemResponse
+import com.example.shoppinglistapp.data.model.ProductItemResponse
 
 @Dao
 interface ProductDao {
 
-    @Query("SELECT * FROM userinfo ORDER BY id DESC")
+    @Query("SELECT * FROM productinfo ORDER BY id DESC")
     fun getAllProductInfo(): List<ProductItemResponse>?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertProduct(user: ProductItemResponse?)
+    fun insertProduct(product: ProductItemResponse?)
 
    @Delete
-    fun deleteUser(user: ProductItemResponse?)
+    fun deleteProduct(product: ProductItemResponse?)
 
 }

@@ -1,4 +1,4 @@
-package com.example.shoppinglistapp.data.entity.response
+package com.example.shoppinglistapp.data.model
 
 
 import com.google.gson.annotations.SerializedName

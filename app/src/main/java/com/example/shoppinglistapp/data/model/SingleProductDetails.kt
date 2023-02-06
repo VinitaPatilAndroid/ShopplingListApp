@@ -1,8 +1,9 @@
-package com.example.shoppinglistapp.data.entity.response
+package com.example.shoppinglistapp.data.model
 
+import com.example.shoppinglistapp.data.model.ProductImage
 import com.google.gson.annotations.SerializedName
 
-data class Data(
+data class SingleProductDetails(
     @SerializedName("cost")
     val cost: Int = 0,
     @SerializedName("created")

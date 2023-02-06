@@ -1,4 +1,4 @@
-package com.example.shoppinglistapp.view.ui.productlist.view
+package com.example.shoppinglistapp.view.ui.productlist
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,11 +7,9 @@ import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.shoppinglistapp.data.entity.response.ProductItemResponse
+import com.example.shoppinglistapp.data.model.ProductItemResponse
 import com.example.shoppinglistapp.databinding.ActivityMainBinding
-import com.example.shoppinglistapp.view.ui.cartDetails.view.CartActivity
-import com.example.shoppinglistapp.view.ui.productlist.adapter.ProductAdapter
-import com.example.shoppinglistapp.view.ui.productlist.viewmodel.ProductItemListViewModel
+import com.example.shoppinglistapp.view.ui.cartDetails.CartActivity
 
 class ProductListActivity : AppCompatActivity() {
 
@@ -46,7 +44,7 @@ class ProductListActivity : AppCompatActivity() {
 
     private fun setObserver() {
         viewModel.productList.observe(this, Observer {
-         productItemList = it.data1 as ArrayList<ProductItemResponse>
+         productItemList = it.productItemResponse as ArrayList<ProductItemResponse>
             setUpProductItemListAdapter(productItemList)
         })
     }

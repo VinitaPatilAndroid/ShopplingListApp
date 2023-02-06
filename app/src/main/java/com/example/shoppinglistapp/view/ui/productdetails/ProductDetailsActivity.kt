@@ -1,4 +1,4 @@
-package com.example.shoppinglistapp.view.ui.productdetails.view
+package com.example.shoppinglistapp.view.ui.productdetails
 
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
@@ -7,17 +7,15 @@ import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.shoppinglistapp.data.entity.response.ProductImage
-import com.example.shoppinglistapp.data.entity.response.SingleDataItem
+import com.example.shoppinglistapp.data.model.ProductImage
+import com.example.shoppinglistapp.data.model.SingleProductItem
 import com.example.shoppinglistapp.databinding.ActivityProductDetailsBinding
-import com.example.shoppinglistapp.view.ui.productdetails.adapter.ProductDetailsAdapter
-import com.example.shoppinglistapp.view.ui.productdetails.viewmodel.ProductDetailsViewModel
 
 class ProductDetailsActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityProductDetailsBinding
-    private lateinit var viewModel:ProductDetailsViewModel
-    private var productDetailsAdapter:ProductDetailsAdapter? = null
+    private lateinit var viewModel: ProductDetailsViewModel
+    private var productDetailsAdapter: ProductDetailsAdapter? = null
     var context: Context? = null
 
 
@@ -29,7 +27,7 @@ class ProductDetailsActivity : AppCompatActivity() {
         init()
     }
 
-    fun init(){
+    fun init() {
         binding.toolbarProductDetails.tvToolbarTitle.setText("Product Details")
         binding.toolbarProductDetails.ivForwardArrow.setOnClickListener {
             finish()
@@ -37,7 +35,8 @@ class ProductDetailsActivity : AppCompatActivity() {
         binding.toolbarProductDetails.ivCart.visibility = View.INVISIBLE
         viewModel = ViewModelProvider(this).get(ProductDetailsViewModel::class.java)
         apiCall()
-        binding.recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL ,false)
+        binding.recyclerView.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
     }
 
@@ -48,22 +47,22 @@ class ProductDetailsActivity : AppCompatActivity() {
 
     private fun setObserver() {
         viewModel.productDetailList.observe(this, Observer {
-           setData(it)
-            setAdapter(it.data.productImages)
+            setData(it)
+            setAdapter(it.singleProduct.productImages)
         })
     }
 
     fun setAdapter(productImageList: List<ProductImage>) {
         productDetailsAdapter = ProductDetailsAdapter(productImageList, context)
-       binding.recyclerView.adapter = productDetailsAdapter
+        binding.recyclerView.adapter = productDetailsAdapter
     }
 
-    fun setData(it: SingleDataItem) {
-        binding.tvTitle.setText(it.data.name)
-        binding.tvSubtitle.setText(it.data.producer)
-        binding.ratBar.rating = it.data.rating.toFloat()
-        binding.tvDescription.setText(it.data.description)
-        binding.tvPrice.text = it.data.cost.toString()
-        binding.tvSmallTitle.text = it.data.productCategoryId.toString()
+    fun setData(it: SingleProductItem) {
+        binding.tvTitle.setText(it.singleProduct.name)
+        binding.tvSubtitle.setText(it.singleProduct.producer)
+        binding.ratBar.rating = it.singleProduct.rating.toFloat()
+        binding.tvDescription.setText(it.singleProduct.description)
+        binding.tvPrice.text = it.singleProduct.cost.toString()
+        binding.tvSmallTitle.text = it.singleProduct.productCategoryId.toString()
     }
 }

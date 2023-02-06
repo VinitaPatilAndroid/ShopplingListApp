@@ -1,11 +1,11 @@
-package com.example.shoppinglistapp.data.entity.response
+package com.example.shoppinglistapp.data.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
-@Entity(tableName = "userinfo")
+@Entity(tableName = "productinfo")
 data class ProductItemResponse(
 
     @field:SerializedName("product_images")

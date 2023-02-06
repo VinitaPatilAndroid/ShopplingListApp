@@ -1,10 +1,8 @@
-package com.example.shoppinglistapp.view.ui.productdetails.viewmodel
+package com.example.shoppinglistapp.view.ui.productdetails
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.shoppinglistapp.data.entity.response.ProductListResponse
-import com.example.shoppinglistapp.data.entity.response.SingleDataItem
+import com.example.shoppinglistapp.data.model.SingleProductItem
 import com.example.shoppinglistapp.data.repository.ProductAndCartRepository
 import kotlinx.coroutines.*
 
@@ -14,7 +12,7 @@ class ProductDetailsViewModel :ViewModel() {
     val errorMessage = MutableLiveData<String>()
     var job: Job? = null
     val loading = MutableLiveData<Boolean>()
-    val productDetailList = MutableLiveData<SingleDataItem>()
+    val productDetailList = MutableLiveData<SingleProductItem>()
 
     fun getProductDetails(product_id:String){
         job = CoroutineScope(Dispatchers.IO).launch {

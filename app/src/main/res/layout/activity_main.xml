@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.ui.productlist.view.ProductListActivity"
+    tools:context=".view.ui.productlist.ProductListActivity"
     android:background="@android:color/holo_red_light">
 
     <androidx.constraintlayout.widget.ConstraintLayout
