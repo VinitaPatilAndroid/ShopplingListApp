@@ -53,7 +53,7 @@ class ProductDetailsActivity : AppCompatActivity() {
     }
 
     fun setAdapter(productImageList: List<ProductImage>) {
-        productDetailsAdapter = ProductDetailsAdapter(productImageList, context)
+        productDetailsAdapter = ProductDetailsAdapter(productImageList)
         binding.recyclerView.adapter = productDetailsAdapter
     }
 

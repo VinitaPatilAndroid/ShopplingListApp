@@ -11,20 +11,20 @@ import retrofit2.http.Query
 interface ApiServices {
 
     @GET(value = "api/products/getList")
-   suspend  fun ProductItemList(
+    suspend fun ProductItemList(
         @Query(value = "product_category_id") product_category_id: String,
         @Query(value = "limit ") limit: String,
         @Query(value = "page ") page: String
-    ):Response<ProductListResponse>
+    ): Response<ProductListResponse>
 
-   @GET(value = "api/products/getDetail")
-   suspend fun ProductDetail(
-       @Query(value = "product_id") product_id:String
-   ):Response<SingleProductItem>
+    @GET(value = "api/products/getDetail")
+    suspend fun ProductDetail(
+        @Query(value = "product_id") product_id: String
+    ): Response<SingleProductItem>
 
     companion object {
         var apiService: ApiServices? = null
-        fun getInstance() : ApiServices {
+        fun getInstance(): ApiServices {
             if (apiService == null) {
                 val retrofit = Retrofit.Builder()
                     .baseUrl("http://staging.php-dev.in:8844/trainingapp/")

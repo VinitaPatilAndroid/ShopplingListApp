@@ -11,13 +11,10 @@ import com.squareup.picasso.Picasso
 class ProductDetailsAdapter:RecyclerView.Adapter<ProductDetailsAdapter.ViewHolder> {
 
     private var productImageList :List<ProductImage>?= null
-    private var context :Context? = null
 
-    constructor(data1:List<ProductImage>, context: Context?)
+    constructor(productImage:List<ProductImage>)
     {
-        this.productImageList = data1
-        this.context = context
-
+        this.productImageList = productImage
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

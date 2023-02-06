@@ -3,6 +3,7 @@ package com.example.shoppinglistapp.view.ui.productlist
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import com.example.shoppinglistapp.data.db.RoomAppDb
 import com.example.shoppinglistapp.data.model.ProductItemResponse
 import com.example.shoppinglistapp.data.model.ProductListResponse
@@ -20,7 +21,7 @@ class ProductItemListViewModel(app: Application) : AndroidViewModel(app){
     val loading = MutableLiveData<Boolean>()
 
     fun getProductList(){
-        job = CoroutineScope(Dispatchers.IO).launch {
+            viewModelScope.launch(Dispatchers.IO) {
             val response = productRepository.getProductList("1","10","1")
             withContext(Dispatchers.Main) {
                 if (response.isSuccessful) {
@@ -40,11 +41,11 @@ class ProductItemListViewModel(app: Application) : AndroidViewModel(app){
 
     override fun onCleared() {
         super.onCleared()
-        job?.cancel()
+
     }
 
     fun insertProductInfo(entity : ProductItemResponse){
-        job = CoroutineScope(Dispatchers.IO).launch{
+        viewModelScope.launch(Dispatchers.IO){
             val productDao = RoomAppDb.getDatabase(getApplication()).productDao()
             productDao?.insertProduct(entity)
         }
