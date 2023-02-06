@@ -26,15 +26,15 @@
         </activity>
         <activity
             android:name=".view.ui.cartDetails.view.CartActivity"
-            android:exported="true">
+            android:exported="false">
         </activity>
         <activity
             android:name=".view.ui.productdetails.view.ProductDetailsActivity"
-            android:exported="true">
+            android:exported="false">
         </activity>
         <activity
             android:name=".view.ui.productlist.view.ProductListActivity"
-            android:exported="true">
+            android:exported="false">
         </activity>
     </application>
 

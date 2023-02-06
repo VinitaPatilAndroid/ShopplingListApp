@@ -29,7 +29,7 @@
                 style="@style/seater_text"
                 android:textColor="#4f4f4f"
                 android:textSize="15sp"
-                android:text="Category - Table"/>
+                tools:text="Category - Table"/>
 
             <TextView  android:id="@+id/tv_small_title"
                 android:layout_below="@id/tv_subtitle"
