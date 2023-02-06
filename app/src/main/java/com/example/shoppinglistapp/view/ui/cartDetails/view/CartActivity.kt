@@ -1,22 +1,18 @@
-package com.example.shoppinglistapp.view.ui
+package com.example.shoppinglistapp.view.ui.cartDetails.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.shoppinglistapp.R
 import com.example.shoppinglistapp.data.entity.response.ProductItemResponse
 import com.example.shoppinglistapp.databinding.ActivityCartBinding
-import com.example.shoppinglistapp.databinding.ActivityMainBinding
-import com.example.shoppinglistapp.view.CartViewModel
+import com.example.shoppinglistapp.view.ui.cartDetails.cartviewmodel.CartViewModel
 import com.example.shoppinglistapp.view.ui.productlist.adapter.ProductAdapter
-import com.example.shoppinglistapp.view.ui.productlist.viewmodel.ProductItemListViewModel
-import com.google.gson.Gson
 
 class CartActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityCartBinding
     private lateinit var viewModel: CartViewModel
     private lateinit var productAdapter: ProductAdapter
@@ -37,7 +33,6 @@ class CartActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this).get(CartViewModel::class.java)
 
         viewModel.getAllProductObservers().observe(this, Observer {
-            Log.d("TAG","cart "+Gson().toJson(it))
             setUpProductItemListAdapter(it as ArrayList<ProductItemResponse>)
         })
     }
@@ -46,7 +41,7 @@ class CartActivity : AppCompatActivity() {
     ) {
         val layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         productAdapter = ProductAdapter(productItemList,this,{
-                   viewModel.deleteProductInfo()
+                   viewModel.deleteProductInfo(it)
         },true)
         binding.rvCartList.layoutManager = layoutManager
         binding.rvCartList.adapter = productAdapter

@@ -2,58 +2,41 @@ package com.example.shoppinglistapp.view.ui.productdetails.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.neostore.R
+import com.example.shoppinglistapp.data.entity.response.ProductImage
+import com.example.shoppinglistapp.databinding.ListItemBinding
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.list_item.*
 
 class ProductDetailsAdapter:RecyclerView.Adapter<ProductDetailsAdapter.ViewHolder> {
 
-    private var data :List<ProductImage>?= null
+    private var productImageList :List<ProductImage>?= null
     private var context :Context? = null
-    private  var listener:onItemClick? = null
-    var selectedPosition = -1
 
-    constructor(data1:List<ProductImage>, context: Context?, liste:onItemClick)
+    constructor(data1:List<ProductImage>, context: Context?)
     {
-        this.data = data1
+        this.productImageList = data1
         this.context = context
-        listener = liste;
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.list_item,parent,false)
-        return ViewHolder(v)
+        return ViewHolder(
+            ListItemBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        )
     }
 
     override fun getItemCount(): Int {
-        return data!!.size
+        return productImageList!!.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
-        if(selectedPosition == position){
-            holder.imageView.setBackgroundResource(R.drawable.color)
-        }else {
-            holder.imageView.background = null
-        }
-        holder.imageView.setOnClickListener {
-            listener?.onClicked(position)
-            selectedPosition = position
-            notifyDataSetChanged()
-        }
-        Picasso.get().load(data!!.get(position)?.image!!).into(holder.imageView)
+        Picasso.get().load(productImageList!!.get(position)?.image!!).into(holder.binding.ivProductAngle)
     }
 
-    class ViewHolder (itemView:View):RecyclerView.ViewHolder(itemView){
-
-         val imageView = itemView.findViewById<ImageView>(R.id.imageView1)
-    }
-    interface onItemClick{
-
-        fun onClicked(position: Int)
-    }
+    class ViewHolder(val binding: ListItemBinding) : RecyclerView.ViewHolder(binding.root)
 }

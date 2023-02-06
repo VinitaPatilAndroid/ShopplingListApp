@@ -1,7 +1,5 @@
 package com.example.shoppinglistapp.data.entity.response
 
-
-import com.example.neostore.activity.product_detail.ProductImage
 import com.google.gson.annotations.SerializedName
 
 data class Data(

@@ -1,10 +1,15 @@
 package com.example.shoppinglistapp.data.entity.response
 
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
+@Entity(tableName = "userinfo")
 data class ProductItemResponse(
+
     @field:SerializedName("product_images")
-    val productImages: String? = null,
+    val productImages: String,
 
     @field:SerializedName("cost")
     val cost: Int? = null,
@@ -27,6 +32,7 @@ data class ProductItemResponse(
     @field:SerializedName("modified")
     val modified: String? = null,
 
+    @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id")
     @field:SerializedName("id")
     val id: Int? = null,
 

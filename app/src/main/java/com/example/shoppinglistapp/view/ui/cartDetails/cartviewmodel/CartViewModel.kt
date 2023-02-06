@@ -1,4 +1,4 @@
-package com.example.shoppinglistapp.view
+package com.example.shoppinglistapp.view.ui.cartDetails.cartviewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
@@ -25,17 +25,17 @@ class CartViewModel (app: Application) : AndroidViewModel(app) {
 
     fun getAllProduct(){
        job = CoroutineScope(Dispatchers.IO).launch {
-           val userDao = RoomAppDb.getDatabase((getApplication()))?.productDao()
-           val list = userDao?.getAllUserInfo()
+           val productDao = RoomAppDb.getDatabase((getApplication()))?.productDao()
+           val list = productDao?.getAllProductInfo()
            allProduct.postValue(list)
        }
     }
 
-    fun deleteProductInfo(){
+    fun deleteProductInfo(entity : ProductItemResponse){
         job = CoroutineScope(Dispatchers.IO).launch {
-            val userDao = RoomAppDb.getDatabase((getApplication()))?.productDao()
-            val list = userDao?.getAllUserInfo()
-            allProduct.postValue(list)
+            val productDao = RoomAppDb.getDatabase((getApplication()))?.productDao()
+            productDao?.deleteUser(entity)
+            getAllProduct()
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.example.shoppinglistapp.domain.repository
+package com.example.shoppinglistapp.data.repository
 
 import com.example.shoppinglistapp.data.networkservices.ApiServices
 

@@ -6,6 +6,7 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
+/*
 class ApiManger {
 
     companion object {
@@ -26,4 +27,4 @@ class ApiManger {
             return retrofit.create(NetworkApi::class.java)
         }
     }
-}
+}*/

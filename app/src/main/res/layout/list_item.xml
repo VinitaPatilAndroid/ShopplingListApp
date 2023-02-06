@@ -3,13 +3,11 @@
               android:orientation="horizontal"
               android:layout_width="150dp"
               android:layout_height="120dp"
-              android:id="@+id/recyclerlayout">
+              android:id="@+id/ll_image_list">
 
-    <ImageView  android:id="@+id/imageView1"
+    <ImageView  android:id="@+id/iv_product_angle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:src="@drawable/imageselector"/>
-
+                android:padding="10dp" />
 
 </LinearLayout>

@@ -11,10 +11,8 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/white"
-        android:minHeight="?actionBarSize"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="8dp">
+        android:background="@android:color/holo_red_light"
+        android:minHeight="?actionBarSize">
 
         <ImageView
             android:id="@+id/iv_forward_arrow"
@@ -33,7 +31,16 @@
             android:padding="4dp"
             android:text="@string/title"
             android:textSize="24sp"
-            android:textColor="@color/black"/>
+            android:textColor="@color/white"/>
+
+        <ImageView
+            android:id="@+id/iv_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_add_shopping_cart"
+            android:layout_gravity="end"
+            android:layout_marginEnd="16dp"
+            android:padding="4dp"/>
 
 
     </androidx.appcompat.widget.Toolbar>
